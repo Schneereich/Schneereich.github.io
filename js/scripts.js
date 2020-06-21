@@ -175,6 +175,15 @@ $(document).ready(function () {
         $('#btn-show-content').toggleClass('toggle-map-content');
     });
 
+    $('#btn-show-map2').click(function () {
+        $('#map-content2').toggleClass('toggle-map-content');
+        $('#btn-show-content2').toggleClass('toggle-map-content');
+    });
+    $('#btn-show-content2').click(function () {
+        $('#map-content2').toggleClass('toggle-map-content');
+        $('#btn-show-content2').toggleClass('toggle-map-content');
+    });
+
     /********************** Add to Calendar **********************/
     var myCalendar = createCalendar({
         options: {
@@ -184,23 +193,23 @@ $(document).ready(function () {
         },
         data: {
             // Event title
-            title: "Ram and Antara's Wedding",
+            title: "Nicole and Seans Wedding",
 
             // Event start date
-            start: new Date('Nov 27, 2017 10:00'),
+            start: new Date('Oct 31, 2020 11:45'),
 
             // Event duration (IN MINUTES)
             // duration: 120,
 
             // You can also choose to set an end time
             // If an end time is set, this will take precedence over duration
-            end: new Date('Nov 29, 2017 00:00'),
+            end: new Date('Nov 1, 2020 02:00'),
 
             // Event Address
-            address: 'ITC Fortune Park Hotel, Kolkata',
+            address: 'Schlossstraße 25, 89079 Ulm',
 
             // Event Description
-            description: "We can't wait to see you on our big day. For any queries or issues, please contact Mr. Amit Roy at +91 9876543210."
+            description: "For any queries or issues, please contact Sean at +49 163 4847842."
         }
     });
 
@@ -241,22 +250,34 @@ $(document).ready(function () {
 
 // Google map
 function initMap() {
-    var location = {lat: 22.5932759, lng: 88.27027720000001};
+    var locationWiblingen = {lat: 48.361190, lng: 9.991372};
+    var locationGauklerhof = {lat: 47.640826, lng: 10.262317};
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
         zoom: 15,
-        center: location,
+        center: locationWiblingen,
+        scrollwheel: false
+    });
+
+    var map2 = new google.maps.Map(document.getElementById('map-canvas2'), {
+        zoom: 15,
+        center: locationGauklerhof,
         scrollwheel: false
     });
 
     var marker = new google.maps.Marker({
-        position: location,
+        position: locationWiblingen,
         map: map
     });
-}
 
+    var marker2 = new google.maps.Marker({
+        position: locationGauklerhof,
+        map: map2
+    });
+}
+// 48.361190, 9.991372
 function initBBSRMap() {
     var la_fiesta = {lat: 20.305826, lng: 85.85480189999998};
-    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    var map = new google.maps.Map(document.getElementById('map-canvas-right'), {
         zoom: 15,
         center: la_fiesta,
         scrollwheel: false
