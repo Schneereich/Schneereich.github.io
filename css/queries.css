@@ -225,6 +225,16 @@
     .events .rightcol {
         padding: 0 20px;
     }
+
+    .hotels .leftcol {
+        padding: 0 15px;
+        margin-bottom: 15px;
+        border-right: none;
+    }
+
+    .hotels .rightcol {
+        padding: 0 20px;
+    }
     
     #eng-pics .img-wrap {
         border-radius: 0;
@@ -233,8 +243,17 @@
     #map-content-wrapper {
         margin-bottom: 40px;
     }
+
+    #map-content-wrapper2 {
+        margin-bottom: 40px;
+    }
     
     #map-content {
+        margin-top: 0;
+        padding: 35px;
+    }
+
+    #map-content2 {
         margin-top: 0;
         padding: 35px;
     }
@@ -266,6 +285,10 @@
         right: 10px; }
 
     #map-content-wrapper {
+        margin-bottom: 0;
+    }
+
+    #map-content-wrapper2 {
         margin-bottom: 0;
     }
     
