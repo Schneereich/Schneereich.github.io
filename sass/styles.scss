@@ -335,6 +335,9 @@ header {
           color: $accent-color;
         }
       }
+      .no-right-padding {
+        padding-right: 0px;
+      }
       &:last-child a {
         padding-right: 0px;
       }

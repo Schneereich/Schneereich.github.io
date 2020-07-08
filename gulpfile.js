@@ -4,6 +4,17 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
+var i18n = require('gulp-i18n-localize');
+
+gulp.task('i18n', function () {
+	return gulp.src('./locales/index.html')
+		.pipe(i18n({
+			locales: ['de','en','hu'],
+            localeDir: './locales',
+            schema: "suffix"
+		}))
+		.pipe(gulp.dest('.'));
+});
 
 // compile scss to css
 gulp.task('sass', function () {
@@ -27,4 +38,4 @@ gulp.task('minify-js', function () {
 });
 
 // default task
-gulp.task('default', gulp.series('sass', 'minify-js'));
+gulp.task('default', gulp.series('sass', 'minify-js', 'i18n'));
